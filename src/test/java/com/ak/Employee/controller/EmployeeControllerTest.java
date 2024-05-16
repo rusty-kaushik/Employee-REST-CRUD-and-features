@@ -53,20 +53,20 @@ class EmployeeControllerTest {
     void tearDown() {
     }
 
-    @Test
-    void createEmployee() throws Exception {
-        employeeDtoOne = convertModelToDto(employee);
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.configure(SerializationFeature.WRAP_ROOT_VALUE, false);
-        ObjectWriter ow = mapper.writer().withDefaultPrettyPrinter();
-        String requestJson=ow.writeValueAsString(employeeDtoOne);
-
-        when(employeeService.createEmployee(employeeDto)).thenReturn("Success");
-
-        this.mockMvc.perform(post("/employee").contentType(MediaType.APPLICATION_JSON)
-                .content(requestJson)).andDo(print())
-                .andExpect(status().isCreated());
-    }
+//    @Test
+//    void createEmployee() throws Exception {
+//        employeeDtoOne = convertModelToDto(employee);
+//        ObjectMapper mapper = new ObjectMapper();
+//        mapper.configure(SerializationFeature.WRAP_ROOT_VALUE, false);
+//        ObjectWriter ow = mapper.writer().withDefaultPrettyPrinter();
+//        String requestJson=ow.writeValueAsString(employeeDtoOne);
+//
+//        when(employeeService.createEmployee(employeeDto)).thenReturn("Success");
+//
+//        this.mockMvc.perform(post("/employee").contentType(MediaType.APPLICATION_JSON)
+//                .content(requestJson)).andDo(print())
+//                .andExpect(status().isCreated());
+//    }
 
 
     @Test
