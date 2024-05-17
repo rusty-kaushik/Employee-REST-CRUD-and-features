@@ -17,4 +17,5 @@ THIS PROJECT INCLUDES ->
 
 Additional things to add ->
 1) Token based Authentication with Spring Security & JWT
-2) 
+2) OAuth 2.0
+3) 
