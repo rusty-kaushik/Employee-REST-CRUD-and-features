@@ -13,3 +13,8 @@ THIS PROJECT INCLUDES ->
 7) Swagger
 8) git
 9) 
+
+
+Additional things to add ->
+1) Token based Authentication with Spring Security & JWT
+2) 
