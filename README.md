@@ -12,7 +12,8 @@ THIS PROJECT INCLUDES ->
 6) Custom Validation function for the incoming data in Employee creation
 7) Swagger
 8) git
-9) 
+9) kafka
+10) 
 
 
 Additional things to add ->
