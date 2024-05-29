@@ -117,5 +117,8 @@ public class EmployeeServiceImpl implements EmployeeService {
         if (empDto.getJoiningDate() == null || empDto.getJoiningDate().after(new Date())) {
             throw new IllegalArgumentException("Joining date must be in the past");
         }
+        if (empRepo.existsById(empDto.getId())) {
+            throw new IllegalArgumentException("Employee ID already exists");
+        }
     }
 }
