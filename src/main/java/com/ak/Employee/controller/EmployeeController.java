@@ -1,6 +1,7 @@
 package com.ak.Employee.controller;
 
 import com.ak.Employee.dto.EmployeeDto;
+import com.ak.Employee.kafkaProducer.EmployeeEventProducer;
 import com.ak.Employee.response.ResponseHandler;
 import com.ak.Employee.service.EmployeeService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -22,6 +23,9 @@ public class EmployeeController {
     @Autowired
     EmployeeService empService;
 
+    @Autowired
+    private EmployeeEventProducer employeeEventProducer;
+
     // CREATE A EMPLOYEE
     @Operation(
             summary = "Create a Employee",
@@ -34,6 +38,7 @@ public class EmployeeController {
     @PostMapping
     public ResponseEntity<Object> createEmployee(@RequestBody EmployeeDto empDto){
         String result = empService.createEmployee(empDto);
+        employeeEventProducer.sendEvent("CREATE", "Employee created: " + empDto.getId());
         return ResponseHandler.responseBuilder("Employee created successfully", HttpStatus.CREATED, result);
     }
 
@@ -49,7 +54,9 @@ public class EmployeeController {
     @DeleteMapping("/{employeeId}")
     public  String deleteEmployee(@PathVariable("employeeId") String employeeId)
     {
-        return empService.deleteEmployee(employeeId);
+        String result = empService.deleteEmployee(employeeId);
+        employeeEventProducer.sendEvent("DELETE", "Employee deleted: " + employeeId);
+        return result;
     }
 
     // GET EMPLOYEE BY ID
@@ -65,6 +72,7 @@ public class EmployeeController {
     public ResponseEntity<Object> getEmployee(@PathVariable("employeeId") String employeeId)
     {
         EmployeeDto result =  empService.getEmployee(employeeId);
+        employeeEventProducer.sendEvent("GET", "Employee retrieved: " + employeeId);
         return ResponseHandler.responseBuilder("Here are the values of requested Employee", HttpStatus.OK,result);
     }
 
@@ -79,7 +87,9 @@ public class EmployeeController {
             @ApiResponse(responseCode = "500", content = { @Content(schema = @Schema()) }) })
     @PutMapping("/{employeeId}")
     public ResponseEntity<Object> updateEmployee(@PathVariable("employeeId") String employeeId, @RequestBody EmployeeDto empDto) {
-            return ResponseHandler.responseBuilder("Employee Updated Successfully", HttpStatus.OK,empService.updateEmployee(employeeId, empDto));
+        String result = empService.updateEmployee(employeeId, empDto);
+        employeeEventProducer.sendEvent("UPDATE", "Employee updated: " + employeeId);
+        return ResponseHandler.responseBuilder("Employee Updated Successfully", HttpStatus.OK, result);
 
     }
 
