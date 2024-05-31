@@ -14,7 +14,7 @@ THIS PROJECT INCLUDES ->
 8) git
 9) kafka (installation) 
 10) RestTemplates
-11) 
+11) JWT token authentication -> https://www.bezkoder.com/spring-boot-jwt-authentication/
 
 
 Additional things to add ->
