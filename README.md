@@ -2,7 +2,12 @@ THIS IS A DEMO PROJECT FOR PRACTICE
 
 JAVA Version -> 17
 
-THIS PROJECT INCLUDES ->
+THIS PROJECT INCLUDES 
+
+also
+
+Need to study and revise these -> 
+
 
 1) Employee CRUD in Sring boot
 2) CSV upload in DB
@@ -14,11 +19,14 @@ THIS PROJECT INCLUDES ->
 8) git
 9) kafka (installation) 
 10) RestTemplates
-11) JWT token authentication -> https://www.bezkoder.com/spring-boot-jwt-authentication/
+11) FeignClient
+12) 
+
 
 
 Additional things to add ->
 1) Token based Authentication with Spring Security & JWT
 2) OAuth 2.0
 3) Apache Cassandra
-4) 
+4) JWT token authentication -> https://www.bezkoder.com/spring-boot-jwt-authentication/
+5) 
