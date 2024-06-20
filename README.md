@@ -20,7 +20,8 @@ Need to study and revise these ->
 9) kafka (installation) 
 10) RestTemplates
 11) FeignClient
-12) 
+12) multi-module project
+13) 
 
 
 
