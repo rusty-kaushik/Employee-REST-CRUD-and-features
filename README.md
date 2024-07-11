@@ -21,7 +21,9 @@ Need to study and revise these ->
 10) RestTemplates
 11) FeignClient
 12) multi-module project
-13) 
+13) Pagination
+14) CriteriaBuilder
+15) Custom Query 
 
 
 
