@@ -23,7 +23,9 @@ Need to study and revise these ->
 12) multi-module project
 13) Pagination
 14) CriteriaBuilder
-15) Custom Query 
+15) Custom Query
+16) Specifications (Dynamic Query Generation)
+17) 
 
 
 
