@@ -3,6 +3,7 @@ package com.ak.Employee.dto;
 import java.util.Date;
 
 public class EmployeeDto {
+    // this is a DTO
     private String id;
     private String name;
     private int age;
