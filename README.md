@@ -34,4 +34,4 @@ Additional things to add ->
 2) OAuth 2.0
 3) Apache Cassandra
 4) JWT token authentication -> https://www.bezkoder.com/spring-boot-jwt-authentication/
-5) 
+5) MapStruct
