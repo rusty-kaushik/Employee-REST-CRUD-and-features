@@ -25,7 +25,8 @@ Need to study and revise these ->
 14) CriteriaBuilder
 15) Custom Query
 16) Specifications (Dynamic Query Generation)
-17) 
+17) BeanUtils
+18) 
 
 
 
