@@ -26,7 +26,8 @@ Need to study and revise these ->
 15) Custom Query
 16) Specifications (Dynamic Query Generation)
 17) BeanUtils
-18) 
+18) SCDF
+19) 
 
 
 
